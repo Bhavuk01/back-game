@@ -3,16 +3,14 @@ const bodyParser = require('body-parser');
 const cors = require('cors');
 
 const app = express();
-app.use(cors());
-app.use(bodyParser.json());
 
-// Alternatively, enable CORS with specific options
 app.use(cors({
-    origin: 'https://minesh.netlify.app',
-    methods: ['GET', 'POST'],
-    allowedHeaders: ['Content-Type']
-  }));
-  
+  origin: 'https://minesh.netlify.app',
+  methods: ['GET', 'POST'],
+  allowedHeaders: ['Content-Type']
+}));
+
+app.use(bodyParser.json());
 
 const validKeys = ['your-key-1', 'your-key-2', 'your-key-3'];
 
