@@ -5,6 +5,13 @@ const app = express();
 app.use(cors());
 app.use(bodyParser.json());
 
+// Alternatively, enable CORS with specific options
+app.use(cors({
+   origin: 'https://minesh.netlify.app/',
+   methods: ['GET', 'POST'],
+   allowedHeaders: ['Content-Type']
+ }));
+
 const validKeys = ['your-key-1', 'your-key-2', 'your-key-3'];
 
 app.post('/api/login', (req, res) => {
