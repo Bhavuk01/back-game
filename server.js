@@ -2,6 +2,7 @@ const express = require('express');
 const bodyParser = require('body-parser');
 
 const app = express();
+app.use(cors());
 app.use(bodyParser.json());
 
 const validKeys = ['your-key-1', 'your-key-2', 'your-key-3'];
