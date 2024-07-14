@@ -14,7 +14,11 @@ app.use(bodyParser.json());
 
 const validKeys = ['your-key-1', 'your-key-2', 'your-key-3'];
 
+
 app.post('/api/login', (req, res) => {
+  console.log('Request headers:', req.headers);
+  console.log('Request body:', req.body);
+
   const { key } = req.body;
   if (validKeys.includes(key)) {
     res.json({ success: true });
@@ -22,6 +26,7 @@ app.post('/api/login', (req, res) => {
     res.json({ success: false });
   }
 });
+
 
 const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
