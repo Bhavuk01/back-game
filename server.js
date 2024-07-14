@@ -6,7 +6,7 @@ const app = express();
 
 // Apply CORS middleware
 app.use(cors({
-  origin: ['http://127.0.0.1:5500', 'https://minesh.netlify.app'],
+  origin: ['http://127.0.0.1:5500', 'https://superbe.netlify.app/login.html' , 'https://minesh.netlify.app'],
   methods: ['GET', 'POST'],
   allowedHeaders: ['Content-Type']
 }));
